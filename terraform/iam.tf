@@ -29,7 +29,7 @@ data "aws_iam_policy_document" "registration-lambda-role-policy" {
   statement {
     effect    = "Allow"
     actions   = ["s3:*"]
-    resources = ["*"]
+    resources = ["arn:aws:s3:::*"]
   }
   statement {
     effect    = "Allow"

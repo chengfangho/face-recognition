@@ -8,7 +8,7 @@ resource "aws_s3_object" "rekognition-lambda_zip" {
   key    = "lambda.zip"
 }
 
-resource "aws_s3_bucket_versioning" "rrekognition-deployment-package-bucket-715-versioning" {
+resource "aws_s3_bucket_versioning" "rekognition-deployment-package-bucket-715-versioning" {
   bucket = aws_s3_bucket.rekognition-deployment-package-bucket-715.bucket
   versioning_configuration {
     status = "Enabled"

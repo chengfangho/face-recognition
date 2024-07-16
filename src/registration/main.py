@@ -28,6 +28,7 @@ def lambda_handler(event, context):
 
 
 def index_face_image(bucket, key):
+    # need to run aws rekognition create-collection --collection-id faces-715 --region us-west-2
     response = rekognition.index_faces(
         Image={"S3Object": {"Bucket": bucket, "Name": key}}, CollectionId="faces-715"
     )
