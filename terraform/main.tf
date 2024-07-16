@@ -2,7 +2,7 @@
 resource "aws_lambda_function" "face-registration-function-715" {
   function_name                  = "face-registration-function-715"
   role                           = aws_iam_role.registration-lambda-role.arn
-  handler                        = "run.registration_lambda"
+  handler                        = "registration.main.lambda_handler"
   runtime                        = "python3.10"
   timeout                        = 10
   memory_size                    = 500                                                    
@@ -37,7 +37,7 @@ resource "aws_cloudwatch_log_group" "registration-function-log-group" {
 resource "aws_lambda_function" "face-recognition-function-715" {
   function_name                  = "face-recognition-function-715"
   role                           = aws_iam_role.registration-lambda-role.arn
-  handler                        = "run.recognition_lambda"
+  handler                        = "recognition.main.lambda_handler"
   runtime                        = "python3.10"
   timeout                        = 10
   memory_size                    = 500                                                    
