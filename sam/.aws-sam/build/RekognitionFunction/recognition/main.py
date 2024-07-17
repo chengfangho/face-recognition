@@ -26,7 +26,7 @@ def lambda_handler(event, context):
             }
         )
         if 'Item' in face:
-            print(f'Person found: {face['Item']}')
+            print(f"Person found: {face['Item']}")
             return buildResponse(200, {
                 'message': 'Success',
                 'first_name':face['Item']['first_name'],
