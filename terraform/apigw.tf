@@ -78,9 +78,44 @@ resource "aws_api_gateway_integration" "recognition-api-integration-filename-opt
   type                 = "MOCK"
 }
 
+resource "aws_api_gateway_method" "recognition-api-method-bucket-option"{
+    authorization = "NONE"
+    http_method = "OPTIONS"
+    resource_id = aws_api_gateway_resource.recognition-api-gateway-resource-bucket.id
+    rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
+}
+
+resource "aws_api_gateway_method_response" "recognition-api-method-response-bucket-option" {
+  http_method = "OPTIONS"
+  resource_id = aws_api_gateway_resource.recognition-api-gateway-resource-bucket.id
+  response_models = {
+    "application/json" = "Empty"
+  }
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = "false"
+    "method.response.header.Access-Control-Allow-Methods" = "false"
+    "method.response.header.Access-Control-Allow-Origin"  = "false"
+  }
+  rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
+  status_code = "200"
+}
+
+resource "aws_api_gateway_integration" "recognition-api-integration-bucket-option" {
+  connection_type      = "INTERNET"
+  http_method          = "OPTIONS"
+  passthrough_behavior = "WHEN_NO_MATCH"
+  request_templates = {
+    "application/json" = "{\"statusCode\": 200}"
+  }
+  resource_id          = aws_api_gateway_resource.recognition-api-gateway-resource-bucket.id
+  rest_api_id          = aws_api_gateway_rest_api.recognition-api-gateway.id
+  timeout_milliseconds = "29000"
+  type                 = "MOCK"
+}
+
 resource "aws_api_gateway_integration" "recognition-api-integration-filename-put" {
   connection_type         = "INTERNET"
-  credentials             = aws_iam_role.api_gateway_role.arn
+  credentials             = "arn:aws:iam::166366443471:role/FacialRecognitionAPIGatewayRole-7.14"
   http_method             = "PUT"
   integration_http_method = "PUT"
   passthrough_behavior    = "WHEN_NO_MATCH"
@@ -116,9 +151,6 @@ resource "aws_api_gateway_integration_response" "recognition-api-integration-res
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
 }
-
-
-
 
 
 
