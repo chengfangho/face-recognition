@@ -115,7 +115,7 @@ resource "aws_api_gateway_integration" "recognition-api-integration-bucket-optio
 
 resource "aws_api_gateway_integration" "recognition-api-integration-filename-put" {
   connection_type         = "INTERNET"
-  credentials             = "arn:aws:iam::166366443471:role/FacialRecognitionAPIGatewayRole-7.14"
+  credentials             = aws_iam_role.api_gateway_role.arn
   http_method             = "PUT"
   integration_http_method = "PUT"
   passthrough_behavior    = "WHEN_NO_MATCH"
@@ -285,7 +285,7 @@ resource "aws_iam_policy" "s3_policy" {
       {
         Effect   = "Allow"
         Action   = "s3:PutObject"
-        Resource = "arn:aws:s3:::your-bucket-name/*"  # Replace with your S3 bucket ARN
+        Resource = "arn:aws:s3:::face-recognition-bucket-715/*" 
       }
     ]
   })

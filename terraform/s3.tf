@@ -18,6 +18,7 @@ resource "aws_s3_bucket_versioning" "rekognition-deployment-package-bucket-715-v
 # face-registration-bucket-715 for registration
 resource "aws_s3_bucket" "face-registration-bucket-715" {
   bucket = "face-registration-bucket-715"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_versioning" "face-registration-bucket-715-versioning" {
