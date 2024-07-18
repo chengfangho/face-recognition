@@ -71,7 +71,7 @@ function App() {
           namge="image"
           onChange={(e) => setImage(e.target.files[0])}
         />
-        <button type="submit">Authenticate</button>
+        <button type="submit">Check</button>
       </form>
       <div className={isAuth ? "success" : "failure"}>
         {uploadResultMessage}
