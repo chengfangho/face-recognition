@@ -142,6 +142,18 @@ resource "aws_api_gateway_integration_response" "recognition-api-integration-res
   status_code = "200"
 }
 
+resource "aws_api_gateway_integration_response" "recognition-api-integration-response-bucket-option" {
+  http_method = "OPTIONS"
+  resource_id = aws_api_gateway_resource.recognition-api-gateway-resource-bucket.id
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+    "method.response.header.Access-Control-Allow-Methods" = "'OPTIONS,PUT'"
+    "method.response.header.Access-Control-Allow-Origin"  = "'*'"
+  }
+  rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
+  status_code = "200"
+}
+
 resource "aws_api_gateway_integration_response" "recognition-api-integration-response-filename-put" {
   http_method = "PUT"
   resource_id = aws_api_gateway_resource.recognition-api-gateway-resource-filename.id

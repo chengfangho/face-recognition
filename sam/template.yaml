@@ -8,4 +8,4 @@ Resources:
     Properties:
       CodeUri: ../src/
       Handler: run.registration_lambda
-      Runtime: python3.12
+      Runtime: python3.11
