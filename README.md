@@ -6,23 +6,23 @@ This project enables face recognition using AWS services, including Rekognition,
 
 ### 1. Initialize Terraform
 
-Navigate to the terraform folder and run the following command to initialize Terraform:
+Navigate to the **terraform** folder and run the following command to initialize Terraform:
 
 ```terraform init```
 
 ### 2. Deploy Resources
 
-Run the deploy.sh script from the project root directory to package the Lambda function and upload it to S3:
+Run the **deploy.sh** script from the project root directory to package the Lambda function and upload it to S3:
 
 ```./deploy.sh```
 
-*Note: The first upload attempt will fail because the S3 bucket hasn't been created yet. The deploy.sh script includes running terraform apply, which will create the necessary resources.*
+*Note: The first upload attempt will likley fail because the S3 bucket hasn't been created yet. The deploy.sh script includes running terraform apply, which will create the necessary resources.*
 
 ### 3. Update API Gateway URL
-After the deploy.sh script finishes running, it will output the API Gateway invoke URL. Replace the ```invoke_url``` variable in **app/src/app.js** with this URL.
+After the deploy.sh script finishes running, it will output the API Gateway invoke URL. Replace the **invoke_url** variable in **app/src/app.js** with this URL.
 
 ### 4. Upload Faces to S3
-A bucket named ***face-registration-bucket-715*** will be created in S3. Upload face images with filenames in the format firstname_lastname.jpg or .png to this bucket. This will trigger AWS Rekognition to learn the faces and store their rekognition_id in DynamoDB for face-name mapping.
+A bucket named **face-registration-bucket-715** will be created in S3. Upload face images with filenames in the format *firstname*_*lastname*.jpg or .png to this bucket. This will trigger AWS Rekognition to learn the faces and store their rekognition_id in DynamoDB for face-name mapping.
 
 ### 5. Start the React App
 Navigate to the app folder and start the React app:
