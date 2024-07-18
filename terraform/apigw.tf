@@ -272,39 +272,6 @@ resource "aws_api_gateway_stage" "recognition-api-dev" {
   stage_name            = "dev"
 }
 
-resource "aws_iam_role" "api_gateway_role" {
-  name = "api_gateway_s3_role"
-  
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect    = "Allow"
-        Principal = { Service = "apigateway.amazonaws.com" }
-        Action    = "sts:AssumeRole"
-      }
-    ]
-  })
-}
-
-# IAM policy to allow S3 PutObject action
-resource "aws_iam_policy" "s3_policy" {
-  name = "s3_put_policy"
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect   = "Allow"
-        Action   = "s3:PutObject"
-        Resource = "arn:aws:s3:::face-recognition-bucket-715/*" 
-      }
-    ]
-  })
-}
-
-# Attach the S3 policy to the IAM role
-resource "aws_iam_role_policy_attachment" "s3_policy_attachment" {
-  role       = aws_iam_role.api_gateway_role.name
-  policy_arn = aws_iam_policy.s3_policy.arn
+output "api_gateway_invoke_url" {
+  value = aws_api_gateway_deployment.example_api_deployment.invoke_url
 }

@@ -7,7 +7,3 @@ resource "aws_dynamodb_table" "faces-715" {
     type = "S"
   }
 }
-
-output "dynamodb_table_name" {
-  value = aws_dynamodb_table.faces-715.name
-}

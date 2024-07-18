@@ -1,6 +1,7 @@
 # rekognition-deployment-package-bucket-715 for lambda deployment
 resource "aws_s3_bucket" "rekognition-deployment-package-bucket-715" {
   bucket = "rekognition-deployment-package-bucket-715"
+  force_destroy = true
 }
 
 resource "aws_s3_object" "rekognition-lambda_zip" {
@@ -31,6 +32,7 @@ resource "aws_s3_bucket_versioning" "face-registration-bucket-715-versioning" {
 # face-recognition-bucket-715 for recognition
 resource "aws_s3_bucket" "face-recognition-bucket-715" {
   bucket = "face-recognition-bucket-715"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_versioning" "face-recognition-bucket-715-versioning" {

@@ -6,7 +6,6 @@ dynamodb = boto3.resource("dynamodb", region_name="us-west-2")
 dynamodb_table_name = "faces-715"
 employee_table = dynamodb.Table(dynamodb_table_name)
 
-
 def lambda_handler(event, context):
     print(event)
     bucket = event["Records"][0]["s3"]["bucket"]["name"]
@@ -26,14 +25,12 @@ def lambda_handler(event, context):
         print(f"Error processing image {key} from bucket {bucket}")
         raise (e)
 
-
 def index_face_image(bucket, key):
-    # need to run aws rekognition create-collection --collection-id faces-715 --region us-west-2
+    # need to run 'aws rekognition create-collection --collection-id faces-715 --region us-west-2' first
     response = rekognition.index_faces(
         Image={"S3Object": {"Bucket": bucket, "Name": key}}, CollectionId="faces-715"
     )
     return response
-
 
 def register_face(face_id, first_name, last_name):
     employee_table.put_item(
