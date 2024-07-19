@@ -262,16 +262,16 @@ resource "aws_api_gateway_integration_response" "recognition-api-integration-res
   status_code = "200"
 }
 
-resource "aws_api_gateway_deployment" "example_api_deployment" {
+resource "aws_api_gateway_deployment" "recognition_api_deployment" {
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
 }
 
 resource "aws_api_gateway_stage" "recognition-api-dev" {
-  deployment_id         = aws_api_gateway_deployment.example_api_deployment.id
+  deployment_id         = aws_api_gateway_deployment.recognition_api_deployment.id
   rest_api_id           = aws_api_gateway_rest_api.recognition-api-gateway.id
   stage_name            = "dev"
 }
 
 output "api_gateway_invoke_url" {
-  value = aws_api_gateway_deployment.example_api_deployment.invoke_url
+  value = aws_api_gateway_deployment.recognition_api_deployment.invoke_url
 }
