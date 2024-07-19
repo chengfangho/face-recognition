@@ -1,10 +1,7 @@
-cd sam
-sam build || \
-    { echo "ERROR: building with sam failed"; exit 1; }
-mkdir -p ../build
-rm -f ../build/lambda.zip
+mkdir -p build
+rm -f build/lambda.zip
 
-cd ../src
+cd src
 zip -r ../build/lambda.zip .
 
 cd ..
