@@ -1,0 +1,243 @@
+[0m[1maws_iam_policy.s3_policy: Refreshing state... [id=arn:aws:iam::166366443471:policy/s3_put_policy][0m
+[0m[1mdata.aws_iam_policy_document.registration-lambda-role-policy: Reading...[0m[0m
+[0m[1maws_iam_role.api_gateway_role: Refreshing state... [id=api_gateway_s3_role][0m
+[0m[1mdata.aws_iam_policy_document.registration-lambda-role-assume-role-policy: Reading...[0m[0m
+[0m[1maws_s3_bucket.rekognition-deployment-package-bucket-715: Refreshing state... [id=rekognition-deployment-package-bucket-715][0m
+[0m[1maws_s3_bucket.face-registration-bucket-715: Refreshing state... [id=face-registration-bucket-715][0m
+[0m[1maws_api_gateway_rest_api.recognition-api-gateway: Refreshing state... [id=4atdll53xl][0m
+[0m[1maws_cloudwatch_log_group.registration-function-log-group: Refreshing state... [id=/aws/lambda/face-registration-function-715][0m
+[0m[1mdata.aws_iam_policy_document.registration-lambda-role-assume-role-policy: Read complete after 0s [id=2690255455][0m
+[0m[1maws_dynamodb_table.faces-715: Refreshing state... [id=faces-715][0m
+[0m[1maws_s3_bucket.face-recognition-bucket-715: Refreshing state... [id=face-recognition-bucket-715][0m
+[0m[1mdata.aws_iam_policy_document.registration-lambda-role-policy: Read complete after 0s [id=300856692][0m
+[0m[1maws_iam_role.registration-lambda-role: Refreshing state... [id=registration-lambda-role][0m
+[0m[1maws_api_gateway_resource.recognition-api-gateway-resource-person: Refreshing state... [id=9dbo3b][0m
+[0m[1maws_api_gateway_resource.recognition-api-gateway-resource-bucket: Refreshing state... [id=kh1j3t][0m
+[0m[1maws_api_gateway_resource.recognition-api-gateway-resource-filename: Refreshing state... [id=rntqn1][0m
+[0m[1maws_api_gateway_method.recognition-api-method-bucket-option: Refreshing state... [id=agm-4atdll53xl-kh1j3t-OPTIONS][0m
+[0m[1maws_api_gateway_method.recognition-api-method-person-option: Refreshing state... [id=agm-4atdll53xl-9dbo3b-OPTIONS][0m
+[0m[1maws_api_gateway_method.recognition-api-method-person-get: Refreshing state... [id=agm-4atdll53xl-9dbo3b-GET][0m
+[0m[1maws_api_gateway_method.recognition-api-method-filename-put: Refreshing state... [id=agm-4atdll53xl-rntqn1-PUT][0m
+[0m[1maws_api_gateway_method.recognition-api-method-filename-option: Refreshing state... [id=agm-4atdll53xl-rntqn1-OPTIONS][0m
+[0m[1maws_api_gateway_method_response.recognition-api-method-response-person-option: Refreshing state... [id=agmr-4atdll53xl-9dbo3b-OPTIONS-200][0m
+[0m[1maws_api_gateway_method_response.recognition-api-method-response-bucket-option: Refreshing state... [id=agmr-4atdll53xl-kh1j3t-OPTIONS-200][0m
+[0m[1maws_api_gateway_method_response.recognition-api-method-response-person-get: Refreshing state... [id=agmr-4atdll53xl-9dbo3b-GET-200][0m
+[0m[1maws_api_gateway_integration.recognition-api-integration-person-option: Refreshing state... [id=agi-4atdll53xl-9dbo3b-OPTIONS][0m
+[0m[1maws_api_gateway_method_response.recognition-api-method-response-filename-put: Refreshing state... [id=agmr-4atdll53xl-rntqn1-PUT-200][0m
+[0m[1maws_api_gateway_method_response.recognition-api-method-response-filename-option: Refreshing state... [id=agmr-4atdll53xl-rntqn1-OPTIONS-200][0m
+[0m[1maws_api_gateway_integration.recognition-api-integration-bucket-option: Refreshing state... [id=agi-4atdll53xl-kh1j3t-OPTIONS][0m
+[0m[1maws_api_gateway_integration_response.recognition-api-integration-response-person-option: Refreshing state... [id=agir-4atdll53xl-9dbo3b-OPTIONS-200][0m
+[0m[1maws_api_gateway_integration_response.recognition-api-integration-response-bucket-option: Refreshing state... [id=agir-4atdll53xl-kh1j3t-OPTIONS-200][0m
+[0m[1maws_api_gateway_integration.recognition-api-integration-filename-option: Refreshing state... [id=agi-4atdll53xl-rntqn1-OPTIONS][0m
+[0m[1maws_api_gateway_integration_response.recognition-api-integration-response-filename-option: Refreshing state... [id=agir-4atdll53xl-rntqn1-OPTIONS-200][0m
+[0m[1maws_iam_role_policy_attachment.s3_policy_attachment: Refreshing state... [id=api_gateway_s3_role-20240721235013763400000002][0m
+[0m[1maws_api_gateway_integration.recognition-api-integration-filename-put: Refreshing state... [id=agi-4atdll53xl-rntqn1-PUT][0m
+[0m[1maws_api_gateway_integration_response.recognition-api-integration-response-filename-put: Refreshing state... [id=agir-4atdll53xl-rntqn1-PUT-200][0m
+[0m[1maws_iam_role_policy.registration-lambda-role-policy: Refreshing state... [id=registration-lambda-role:terraform-20240721235013689600000001][0m
+[0m[1maws_s3_bucket_versioning.rekognition-deployment-package-bucket-715-versioning: Refreshing state... [id=rekognition-deployment-package-bucket-715][0m
+[0m[1maws_s3_object.rekognition-lambda_zip: Refreshing state... [id=lambda.zip][0m
+[0m[1maws_s3_bucket_versioning.face-recognition-bucket-715-versioning: Refreshing state... [id=face-recognition-bucket-715][0m
+[0m[1maws_s3_bucket_versioning.face-registration-bucket-715-versioning: Refreshing state... [id=face-registration-bucket-715][0m
+
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform
+[0m
+Terraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+[1m  # aws_s3_object.rekognition-lambda_zip[0m has changed
+[0m  [33m~[0m[0m resource "aws_s3_object" "rekognition-lambda_zip" {
+        id                     = "lambda.zip"
+      [32m+[0m[0m version_id             = "ljoVPMkrjmbBiz_LZX.wt.eMSGcO633C"
+        [90m# (10 unchanged attributes hidden)[0m[0m
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_api_gateway_deployment.recognition_api_deployment[0m will be created
+[0m  [32m+[0m[0m resource "aws_api_gateway_deployment" "recognition_api_deployment" {
+      [32m+[0m[0m created_date  = (known after apply)
+      [32m+[0m[0m execution_arn = (known after apply)
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m invoke_url    = (known after apply)
+      [32m+[0m[0m rest_api_id   = "4atdll53xl"
+    }
+
+[1m  # aws_api_gateway_integration.recognition-api-integration-person-get[0m will be created
+[0m  [32m+[0m[0m resource "aws_api_gateway_integration" "recognition-api-integration-person-get" {
+      [32m+[0m[0m cache_namespace         = (known after apply)
+      [32m+[0m[0m connection_type         = "INTERNET"
+      [32m+[0m[0m content_handling        = "CONVERT_TO_TEXT"
+      [32m+[0m[0m http_method             = "GET"
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m integration_http_method = "POST"
+      [32m+[0m[0m passthrough_behavior    = "WHEN_NO_MATCH"
+      [32m+[0m[0m resource_id             = "9dbo3b"
+      [32m+[0m[0m rest_api_id             = "4atdll53xl"
+      [32m+[0m[0m timeout_milliseconds    = 29000
+      [32m+[0m[0m type                    = "AWS_PROXY"
+      [32m+[0m[0m uri                     = (known after apply)
+    }
+
+[1m  # aws_api_gateway_integration_response.recognition-api-integration-response-person-get[0m will be created
+[0m  [32m+[0m[0m resource "aws_api_gateway_integration_response" "recognition-api-integration-response-person-get" {
+      [32m+[0m[0m http_method         = "GET"
+      [32m+[0m[0m id                  = (known after apply)
+      [32m+[0m[0m resource_id         = "9dbo3b"
+      [32m+[0m[0m response_parameters = {
+          [32m+[0m[0m "method.response.header.Access-Control-Allow-Origin" = "'*'"
+        }
+      [32m+[0m[0m rest_api_id         = "4atdll53xl"
+      [32m+[0m[0m status_code         = "200"
+    }
+
+[1m  # aws_api_gateway_stage.recognition-api-dev[0m will be created
+[0m  [32m+[0m[0m resource "aws_api_gateway_stage" "recognition-api-dev" {
+      [32m+[0m[0m arn           = (known after apply)
+      [32m+[0m[0m deployment_id = (known after apply)
+      [32m+[0m[0m execution_arn = (known after apply)
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m invoke_url    = (known after apply)
+      [32m+[0m[0m rest_api_id   = "4atdll53xl"
+      [32m+[0m[0m stage_name    = "dev"
+      [32m+[0m[0m tags_all      = (known after apply)
+      [32m+[0m[0m web_acl_arn   = (known after apply)
+    }
+
+[1m  # aws_lambda_function.face-recognition-function-715[0m will be created
+[0m  [32m+[0m[0m resource "aws_lambda_function" "face-recognition-function-715" {
+      [32m+[0m[0m architectures                  = (known after apply)
+      [32m+[0m[0m arn                            = (known after apply)
+      [32m+[0m[0m code_sha256                    = (known after apply)
+      [32m+[0m[0m function_name                  = "face-recognition-function-715"
+      [32m+[0m[0m handler                        = "recognition.main.lambda_handler"
+      [32m+[0m[0m id                             = (known after apply)
+      [32m+[0m[0m invoke_arn                     = (known after apply)
+      [32m+[0m[0m last_modified                  = (known after apply)
+      [32m+[0m[0m memory_size                    = 500
+      [32m+[0m[0m package_type                   = "Zip"
+      [32m+[0m[0m publish                        = false
+      [32m+[0m[0m qualified_arn                  = (known after apply)
+      [32m+[0m[0m qualified_invoke_arn           = (known after apply)
+      [32m+[0m[0m reserved_concurrent_executions = -1
+      [32m+[0m[0m role                           = "arn:aws:iam::166366443471:role/registration-lambda-role"
+      [32m+[0m[0m runtime                        = "python3.10"
+      [32m+[0m[0m s3_bucket                      = "rekognition-deployment-package-bucket-715"
+      [32m+[0m[0m s3_key                         = "lambda.zip"
+      [32m+[0m[0m s3_object_version              = "ljoVPMkrjmbBiz_LZX.wt.eMSGcO633C"
+      [32m+[0m[0m signing_job_arn                = (known after apply)
+      [32m+[0m[0m signing_profile_version_arn    = (known after apply)
+      [32m+[0m[0m skip_destroy                   = false
+      [32m+[0m[0m source_code_hash               = (known after apply)
+      [32m+[0m[0m source_code_size               = (known after apply)
+      [32m+[0m[0m tags_all                       = (known after apply)
+      [32m+[0m[0m timeout                        = 10
+      [32m+[0m[0m version                        = (known after apply)
+    }
+
+[1m  # aws_lambda_function.face-registration-function-715[0m will be created
+[0m  [32m+[0m[0m resource "aws_lambda_function" "face-registration-function-715" {
+      [32m+[0m[0m architectures                  = (known after apply)
+      [32m+[0m[0m arn                            = (known after apply)
+      [32m+[0m[0m code_sha256                    = (known after apply)
+      [32m+[0m[0m function_name                  = "face-registration-function-715"
+      [32m+[0m[0m handler                        = "registration.main.lambda_handler"
+      [32m+[0m[0m id                             = (known after apply)
+      [32m+[0m[0m invoke_arn                     = (known after apply)
+      [32m+[0m[0m last_modified                  = (known after apply)
+      [32m+[0m[0m memory_size                    = 500
+      [32m+[0m[0m package_type                   = "Zip"
+      [32m+[0m[0m publish                        = false
+      [32m+[0m[0m qualified_arn                  = (known after apply)
+      [32m+[0m[0m qualified_invoke_arn           = (known after apply)
+      [32m+[0m[0m reserved_concurrent_executions = -1
+      [32m+[0m[0m role                           = "arn:aws:iam::166366443471:role/registration-lambda-role"
+      [32m+[0m[0m runtime                        = "python3.10"
+      [32m+[0m[0m s3_bucket                      = "rekognition-deployment-package-bucket-715"
+      [32m+[0m[0m s3_key                         = "lambda.zip"
+      [32m+[0m[0m s3_object_version              = "ljoVPMkrjmbBiz_LZX.wt.eMSGcO633C"
+      [32m+[0m[0m signing_job_arn                = (known after apply)
+      [32m+[0m[0m signing_profile_version_arn    = (known after apply)
+      [32m+[0m[0m skip_destroy                   = false
+      [32m+[0m[0m source_code_hash               = (known after apply)
+      [32m+[0m[0m source_code_size               = (known after apply)
+      [32m+[0m[0m tags_all                       = (known after apply)
+      [32m+[0m[0m timeout                        = 10
+      [32m+[0m[0m version                        = (known after apply)
+    }
+
+[1m  # aws_lambda_permission.allow_bucket[0m will be created
+[0m  [32m+[0m[0m resource "aws_lambda_permission" "allow_bucket" {
+      [32m+[0m[0m action              = "lambda:InvokeFunction"
+      [32m+[0m[0m function_name       = (known after apply)
+      [32m+[0m[0m id                  = (known after apply)
+      [32m+[0m[0m principal           = "s3.amazonaws.com"
+      [32m+[0m[0m source_arn          = "arn:aws:s3:::face-registration-bucket-715"
+      [32m+[0m[0m statement_id        = "AllowExecutionFromS3Bucket"
+      [32m+[0m[0m statement_id_prefix = (known after apply)
+    }
+
+[1m  # aws_lambda_permission.apigw[0m will be created
+[0m  [32m+[0m[0m resource "aws_lambda_permission" "apigw" {
+      [32m+[0m[0m action              = "lambda:InvokeFunction"
+      [32m+[0m[0m function_name       = "face-recognition-function-715"
+      [32m+[0m[0m id                  = (known after apply)
+      [32m+[0m[0m principal           = "apigateway.amazonaws.com"
+      [32m+[0m[0m source_arn          = "arn:aws:execute-api:us-west-2:166366443471:4atdll53xl/*/*"
+      [32m+[0m[0m statement_id        = "AllowAPIGatewayInvoke"
+      [32m+[0m[0m statement_id_prefix = (known after apply)
+    }
+
+[1m  # aws_s3_bucket_notification.rekognition-lambda-trigger[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_notification" "rekognition-lambda-trigger" {
+      [32m+[0m[0m bucket      = "face-registration-bucket-715"
+      [32m+[0m[0m eventbridge = false
+      [32m+[0m[0m id          = (known after apply)
+
+      [32m+[0m[0m lambda_function {
+          [32m+[0m[0m events              = [
+              [32m+[0m[0m "s3:ObjectCreated:*",
+            ]
+          [32m+[0m[0m id                  = (known after apply)
+          [32m+[0m[0m lambda_function_arn = (known after apply)
+        }
+    }
+
+[1mPlan:[0m 9 to add, 0 to change, 0 to destroy.
+[0m
+Changes to Outputs:
+  [32m+[0m[0m api_gateway_invoke_url = (known after apply)
+[0m[1maws_lambda_function.face-recognition-function-715: Creating...[0m[0m
+[0m[1maws_lambda_function.face-registration-function-715: Creating...[0m[0m
+[0m[1maws_lambda_function.face-recognition-function-715: Creation complete after 6s [id=face-recognition-function-715][0m
+[0m[1maws_lambda_function.face-registration-function-715: Creation complete after 6s [id=face-registration-function-715][0m
+[0m[1maws_lambda_permission.allow_bucket: Creating...[0m[0m
+[0m[1maws_lambda_permission.apigw: Creating...[0m[0m
+[0m[1maws_api_gateway_integration.recognition-api-integration-person-get: Creating...[0m[0m
+[0m[1maws_lambda_permission.apigw: Creation complete after 0s [id=AllowAPIGatewayInvoke][0m
+[0m[1maws_lambda_permission.allow_bucket: Creation complete after 0s [id=AllowExecutionFromS3Bucket][0m
+[0m[1maws_s3_bucket_notification.rekognition-lambda-trigger: Creating...[0m[0m
+[0m[1maws_api_gateway_integration.recognition-api-integration-person-get: Creation complete after 0s [id=agi-4atdll53xl-9dbo3b-GET][0m
+[0m[1maws_api_gateway_integration_response.recognition-api-integration-response-person-get: Creating...[0m[0m
+[0m[1maws_api_gateway_integration_response.recognition-api-integration-response-person-get: Creation complete after 0s [id=agir-4atdll53xl-9dbo3b-GET-200][0m
+[0m[1maws_api_gateway_deployment.recognition_api_deployment: Creating...[0m[0m
+[0m[1maws_api_gateway_deployment.recognition_api_deployment: Creation complete after 0s [id=trsxc1][0m
+[0m[1maws_s3_bucket_notification.rekognition-lambda-trigger: Creation complete after 0s [id=face-registration-bucket-715][0m
+[0m[1maws_api_gateway_stage.recognition-api-dev: Creating...[0m[0m
+[0m[1maws_api_gateway_stage.recognition-api-dev: Creation complete after 1s [id=ags-4atdll53xl-dev][0m
+[0m[1m[32m
+Apply complete! Resources: 9 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0mapi_gateway_invoke_url = "https://4atdll53xl.execute-api.us-west-2.amazonaws.com/"

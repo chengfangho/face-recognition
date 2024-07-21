@@ -28,6 +28,7 @@ resource "aws_api_gateway_method" "recognition-api-method-filename-put"{
         "method.request.path.bucket"   = true
         "method.request.path.filename" = true
     }
+    depends_on = [ aws_api_gateway_resource.recognition-api-gateway-resource-filename ]
 }
 
 resource "aws_api_gateway_method_response" "recognition-api-method-response-filename-put" {
@@ -41,6 +42,7 @@ resource "aws_api_gateway_method_response" "recognition-api-method-response-file
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_method.recognition-api-method-filename-put ]
 }
 
 resource "aws_api_gateway_method" "recognition-api-method-filename-option"{
@@ -48,6 +50,7 @@ resource "aws_api_gateway_method" "recognition-api-method-filename-option"{
     http_method = "OPTIONS"
     resource_id = aws_api_gateway_resource.recognition-api-gateway-resource-filename.id
     rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
+    depends_on = [ aws_api_gateway_resource.recognition-api-gateway-resource-filename ]
 }
 
 resource "aws_api_gateway_method_response" "recognition-api-method-response-filename-option" {
@@ -63,6 +66,7 @@ resource "aws_api_gateway_method_response" "recognition-api-method-response-file
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_method.recognition-api-method-filename-option ]
 }
 
 resource "aws_api_gateway_integration" "recognition-api-integration-filename-option" {
@@ -76,6 +80,7 @@ resource "aws_api_gateway_integration" "recognition-api-integration-filename-opt
   rest_api_id          = aws_api_gateway_rest_api.recognition-api-gateway.id
   timeout_milliseconds = "29000"
   type                 = "MOCK"
+  depends_on = [ aws_api_gateway_method_response.recognition-api-method-response-filename-option ]
 }
 
 resource "aws_api_gateway_method" "recognition-api-method-bucket-option"{
@@ -83,6 +88,7 @@ resource "aws_api_gateway_method" "recognition-api-method-bucket-option"{
     http_method = "OPTIONS"
     resource_id = aws_api_gateway_resource.recognition-api-gateway-resource-bucket.id
     rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
+    depends_on = [ aws_api_gateway_resource.recognition-api-gateway-resource-bucket]
 }
 
 resource "aws_api_gateway_method_response" "recognition-api-method-response-bucket-option" {
@@ -98,6 +104,7 @@ resource "aws_api_gateway_method_response" "recognition-api-method-response-buck
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_method.recognition-api-method-bucket-option ]
 }
 
 resource "aws_api_gateway_integration" "recognition-api-integration-bucket-option" {
@@ -111,6 +118,7 @@ resource "aws_api_gateway_integration" "recognition-api-integration-bucket-optio
   rest_api_id          = aws_api_gateway_rest_api.recognition-api-gateway.id
   timeout_milliseconds = "29000"
   type                 = "MOCK"
+  depends_on = [ aws_api_gateway_method_response.recognition-api-method-response-bucket-option ]
 }
 
 resource "aws_api_gateway_integration" "recognition-api-integration-filename-put" {
@@ -128,6 +136,7 @@ resource "aws_api_gateway_integration" "recognition-api-integration-filename-put
   timeout_milliseconds = "29000"
   type                 = "AWS"
   uri                  = "arn:aws:apigateway:us-west-2:s3:path/{bucket}/{filename}"
+  depends_on = [ aws_api_gateway_method_response.recognition-api-method-response-filename-put]
 }
 
 resource "aws_api_gateway_integration_response" "recognition-api-integration-response-filename-option" {
@@ -140,6 +149,7 @@ resource "aws_api_gateway_integration_response" "recognition-api-integration-res
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_integration.recognition-api-integration-filename-option ]
 }
 
 resource "aws_api_gateway_integration_response" "recognition-api-integration-response-bucket-option" {
@@ -152,6 +162,7 @@ resource "aws_api_gateway_integration_response" "recognition-api-integration-res
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_integration.recognition-api-integration-bucket-option ]
 }
 
 resource "aws_api_gateway_integration_response" "recognition-api-integration-response-filename-put" {
@@ -162,6 +173,7 @@ resource "aws_api_gateway_integration_response" "recognition-api-integration-res
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_integration.recognition-api-integration-filename-put ]
 }
 
 
@@ -177,6 +189,7 @@ resource "aws_api_gateway_method" "recognition-api-method-person-get"{
     http_method = "GET"
     resource_id = aws_api_gateway_resource.recognition-api-gateway-resource-person.id
     rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
+    depends_on = [ aws_api_gateway_resource.recognition-api-gateway-resource-person ]
 }
 
 resource "aws_api_gateway_method" "recognition-api-method-person-option"{
@@ -184,6 +197,7 @@ resource "aws_api_gateway_method" "recognition-api-method-person-option"{
     http_method = "OPTIONS"
     resource_id = aws_api_gateway_resource.recognition-api-gateway-resource-person.id
     rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
+    depends_on = [ aws_api_gateway_resource.recognition-api-gateway-resource-person ]
 }
 
 resource "aws_api_gateway_method_response" "recognition-api-method-response-person-get" {
@@ -197,6 +211,7 @@ resource "aws_api_gateway_method_response" "recognition-api-method-response-pers
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_method.recognition-api-method-person-get ]
 }
 
 resource "aws_api_gateway_method_response" "recognition-api-method-response-person-option" {
@@ -212,6 +227,7 @@ resource "aws_api_gateway_method_response" "recognition-api-method-response-pers
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_method.recognition-api-method-person-option ]
 }
 
 resource "aws_api_gateway_integration" "recognition-api-integration-person-get" {
@@ -225,6 +241,7 @@ resource "aws_api_gateway_integration" "recognition-api-integration-person-get" 
   timeout_milliseconds    = "29000"
   type                    = "AWS_PROXY"
   uri                     = aws_lambda_function.face-recognition-function-715.invoke_arn
+  depends_on = [ aws_api_gateway_method_response.recognition-api-method-response-person-get ]
 }
 
 resource "aws_api_gateway_integration" "recognition-api-integration-person-option" {
@@ -238,6 +255,7 @@ resource "aws_api_gateway_integration" "recognition-api-integration-person-optio
   rest_api_id             = aws_api_gateway_rest_api.recognition-api-gateway.id
   timeout_milliseconds = "29000"
   type                 = "MOCK"
+  depends_on = [ aws_api_gateway_method_response.recognition-api-method-response-person-option ]
 }
 
 resource "aws_api_gateway_integration_response" "recognition-api-integration-response-person-get" {
@@ -248,6 +266,7 @@ resource "aws_api_gateway_integration_response" "recognition-api-integration-res
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_integration.recognition-api-integration-person-get ]
 }
 
 resource "aws_api_gateway_integration_response" "recognition-api-integration-response-person-option" {
@@ -260,16 +279,25 @@ resource "aws_api_gateway_integration_response" "recognition-api-integration-res
   }
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
   status_code = "200"
+  depends_on = [ aws_api_gateway_integration.recognition-api-integration-person-option ]
 }
 
 resource "aws_api_gateway_deployment" "recognition_api_deployment" {
   rest_api_id = aws_api_gateway_rest_api.recognition-api-gateway.id
+  depends_on = [ 
+    aws_api_gateway_integration_response.recognition-api-integration-response-bucket-option,
+    aws_api_gateway_integration_response.recognition-api-integration-response-filename-option,
+    aws_api_gateway_integration_response.recognition-api-integration-response-filename-put,
+    aws_api_gateway_integration_response.recognition-api-integration-response-person-option,
+    aws_api_gateway_integration_response.recognition-api-integration-response-person-get,
+   ]
 }
 
 resource "aws_api_gateway_stage" "recognition-api-dev" {
   deployment_id         = aws_api_gateway_deployment.recognition_api_deployment.id
   rest_api_id           = aws_api_gateway_rest_api.recognition-api-gateway.id
   stage_name            = "dev"
+  depends_on = [ aws_api_gateway_deployment.recognition_api_deployment ]
 }
 
 output "api_gateway_invoke_url" {

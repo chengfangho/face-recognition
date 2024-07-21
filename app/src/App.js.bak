@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 
 const uuid = require("uuid");
-const invoke_url = 'https://4atdll53xl.execute-api.us-west-2.amazonaws.com/'
+const invoke_url = "https://virj147ahj.execute-api.us-west-2.amazonaws.com/";
 
 function App() {
   const [image, setImage] = useState("");
